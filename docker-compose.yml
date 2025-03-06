@@ -5,7 +5,9 @@ services:
     image: postgres
     restart: always
     environment:
-      - POSTGRES_PASSWORD=postgres
+      POSTGRES_USER: root123
+      POSTGRES_PASSWORD: root123
+      POSTGRES_DB: postgress
     container_name: postgres
     volumes:
       - ./pgdata:/var/lib/postgresql/data
@@ -16,20 +18,19 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: teddy-db
     environment:
-      - PORT=${PORT}
+      - PORT=${PORT:-3000}
     ports:
       - '3000:3000'
     depends_on:
       - db
     volumes:
-      - ./src:/app/src
+      - .:/home/node/app
+      - /home/node/app/node_modules
 
   pgadmin:
     image: dpage/pgadmin4
     restart: always
-    container_name: nest-pgadmin4
     environment:
       - PGADMIN_DEFAULT_EMAIL=admin@admin.com
       - PGADMIN_DEFAULT_PASSWORD=pgadmin4

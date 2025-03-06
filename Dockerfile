@@ -1,13 +1,18 @@
-FROM node:18
+FROM node:21-slim
 
-WORKDIR /app
+RUN apt update && apt install -y openssl procps
 
-COPY package*.json ./
+RUN npm install -g @nestjs/cli@10.3.2
 
+WORKDIR /home/node/app
+
+COPY --chown=node:node package*.json ./
 RUN npm install
 
-COPY . .
+COPY --chown=node:node . .
 
-RUN npm run build
+USER node
 
-CMD [ "npm", "run", "start:dev"]
+ENV NODE_OPTIONS=--experimental-global-webcrypto
+
+CMD ["npm", "run", "start:dev"]
