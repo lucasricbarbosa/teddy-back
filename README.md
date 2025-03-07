@@ -1,99 +1,109 @@
+<h1 align="center">
+  <img alt="project logo" src="https://teddydigital.io/wp-content/uploads/2023/02/Ativo-13-8.png" width="224px"/><br/>
+  Teste Teddy Fullstack 
+</h1>
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
+    Um projeto desenvolvido como parte do teste técnico para Desenvolvedor Full Stack Jr na Teddy Open Finance. Este é o backend do sistema de gestão de clientes, construído com <b>NestJS</b>, <b>PostgreSQL</b> e documentada com <b>Swagger</b>. O projeto inclui <b>API completa para CRUD de clientes</b>, <b>Sistema de autenticação simplificado</b>, <b>Validação de dados com class-validator</b> e Documentação interativa com Swagger.
+    <br/>
+    <br/>
+    Feito focando em um código <b>moderno</b>, <b>eficiente</b> e <b>estruturado</b>, com foco em usabilidade, qualidade e facilidade de manutenção.
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+<hr>
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+<div align="center">
 
-## Description
+## 🚀 Sobre o Projeto
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+O backend deste sistema é uma **API RESTful para gestão de clientes**, desenvolvida como parte de um teste técnico para a posição de Desenvolvedor Full Stack Jr. Ele oferece funcionalidades como:
 
-## Project setup
+- CRUD completo de clientes (criar, listar, editar e excluir);
+- Sistema de autenticação para proteção dos endpoints;
+- Validação robusta de dados com class-validator;
+- Documentação interativa com Swagger;
+- Containerização com Docker para fácil implantação;
+- Persistência de dados com PostgreSQL.
 
-```bash
-$ npm install
+Este projeto foi desenvolvido seguindo as melhores práticas de arquitetura de software, proporcionando uma solução escalável e de fácil manutenção. Vários aspectos foram cuidadosamente implementados para garantir um sistema confiável e de alta qualidade.
+
+A organização do código segue princípios de arquitetura limpa, com módulos bem definidos e responsabilidades claramente separadas. Utilizei práticas como:
+
+- Injeção de dependências;
+- Padrão Repository para acesso a dados;
+- DTOs para transferência segura de informações;
+- Tratamento centralizado de exceções;
+- Princípios SOLID para código sustentável.
+
+<br />
+
+## 🛠️ Tecnologias Utilizadas
+
+- **NestJS** - Framework Node.js para construção de aplicações server-side eficientes e escaláveis
+- **TypeScript** - Linguagem de programação tipada
+- **PostgreSQL** - Sistema de banco de dados relacional
+- **TypeORM** - ORM para TypeScript e JavaScript
+- **Swagger/OpenAPI** - Documentação de API
+- **Docker** - Containerização da aplicação
+
+# ⚙️ Como Instalar
+
+## Configuração do Ambiente
+
+No diretório backend, copie o arquivo de exemplo:
+
+```sh
+cp .env.example .env
 ```
 
-## Compile and run the project
+Edite o arquivo `.env` e insira as configurações do banco de dados:
 
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+```sh
+POSTGRES_HOST=db
+POSTGRES_PORT=5432
+POSTGRES_USER=root123
+POSTGRES_PASSWORD=root123
+POSTGRES_DB=postgres
+POSTGRES_SYNCHRONIZE=true
+POSTGRES_AUTO_LOAD_ENTITIES=true
 ```
 
-## Run tests
+## Executando o Backend com Docker
 
-```bash
-# unit tests
-$ npm run test
+Para iniciar o backend utilizando Docker, execute o seguinte comando na raiz do projeto:
 
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+```sh
+docker compose up
 ```
 
-## Deployment
+<br />
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+# 🖥️ Utilizando o sistema
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+Depois de instalar e iniciar o projeto, você pode acessar a API através do navegador no endereço [http://localhost:3000/api](http://localhost:3000/api).
 
-```bash
-$ npm install -g mau
-$ mau deploy
-```
+Funcionalidades disponíveis:
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+- **Autenticação de Usuário**: Sistema protegido que requer autenticação para acessar os endpoints restritos.
+- **Gerenciamento de Clientes**: CRUD completo para adicionar, modificar, remover e consultar informações dos clientes cadastrados.
+- **Documentação Interativa**: A API está documentada utilizando Swagger para facilitar o uso e a exploração dos endpoints.
+- **Banco de Dados Persistente**: Conectado ao PostgreSQL para garantir a integridade e permanência dos dados.
 
-## Resources
+# 📚 Outros detalhes...
 
-Check out a few resources that may come in handy when working with NestJS:
+- **Arquitetura e Estruturação**:
+   - O projeto segue o padrão **modular do NestJS**, garantindo separação de responsabilidades e fácil manutenção.
+   - Implementação de **princípios SOLID** para um código sustentável e escalável.
+   - **DTOs (Data Transfer Objects)** são usados para garantir validação e padronização dos dados.
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+- **Validação e Segurança**:
+   - Uso do **class-validator** para validação de dados nos endpoints.
+   - Tratamento centralizado de erros para uma API mais robusta.
 
-## Support
+- **Eficiência e Otimização**:
+   - Utilização de **Docker** para facilitar a implantação e configuração do ambiente.
+   - **Swagger/OpenAPI** integrado para documentação e testes interativos dos endpoints.
+   - **TypeORM** utilizado para abstração e otimização do acesso ao banco de dados.
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+Essas características garantem que o projeto seja escalável, seguro e de fácil manutenção.
 
-## Stay in touch
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
