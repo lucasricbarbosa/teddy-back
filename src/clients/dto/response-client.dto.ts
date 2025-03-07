@@ -8,10 +8,10 @@ export class ResponseClientDTO {
   isSelected?: boolean;
 
   constructor(client: Partial<ClientEntity>) {
-    this.id = client.id;
-    this.name = client.name;
-    this.companyValue = client.companyValue;
-    this.salary = client.salary;
-    this.isSelected = client.isSelected;
+    this.id = client.id as number;
+    this.name = client.name as string;
+    this.companyValue = client.companyValue as number;
+    this.salary = client.salary as number;
+    this.isSelected = client.isSelected as boolean;
   }
 }
